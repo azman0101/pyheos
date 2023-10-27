@@ -216,6 +216,7 @@ class HeosPlayer:
         """Pull current state."""
         await asyncio.gather(
             self.refresh_state(),
+            self.refresh_player_info(),
             self.refresh_now_playing_media(),
             self.refresh_volume(),
             self.refresh_mute(),
@@ -230,6 +231,10 @@ class HeosPlayer:
         """Pull the latest now playing media."""
         payload = await self._commands.get_now_playing_state(self._player_id)
         self._now_playing_media.from_data(payload)
+
+    async def refresh_player_info(self):
+        """Pull the latest player info."""
+        self._info = await self._commands.get_player_info(self._player_id)
 
     async def refresh_volume(self):
         """Pull the latest volume."""

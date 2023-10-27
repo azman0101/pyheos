@@ -61,6 +61,7 @@ class MockHeosDevice:
             const.COMMAND_BROWSE_GET_SOURCES, None, "browse.get_music_sources"
         )
         self.register(const.COMMAND_GET_PLAY_STATE, None, "player.get_play_state")
+        self.register(const.COMMAND_GET_PLAYER_INFO, None, "player.get_player_info")
         self.register(
             const.COMMAND_GET_NOW_PLAYING_MEDIA, None, "player.get_now_playing_media"
         )

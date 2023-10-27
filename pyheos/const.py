@@ -1,7 +1,7 @@
 """Define consts for the pyheos package."""
 
 __title__ = "pyheos"
-__version__ = "0.7.2"
+__version__ = "0.7.3"
 
 CLI_PORT = 1255
 DEFAULT_TIMEOUT = 10.0
@@ -221,6 +221,7 @@ COMMAND_BROWSE_ADD_TO_QUEUE = "browse/add_to_queue"
 
 # Player commands
 COMMAND_GET_PLAYERS = "player/get_players"
+COMMAND_GET_PLAYER_INFO = "player/get_player_info"
 COMMAND_GET_PLAY_STATE = "player/get_play_state"
 COMMAND_SET_PLAY_STATE = "player/set_play_state"
 COMMAND_GET_NOW_PLAYING_MEDIA = "player/get_now_playing_media"

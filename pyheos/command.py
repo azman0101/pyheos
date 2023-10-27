@@ -47,6 +47,14 @@ class HeosCommands:
         response = await self._connection.command(const.COMMAND_GET_PLAY_STATE, params)
         return response.get_message("state")
 
+    async def get_player_info(self, player_id: int) -> dict:
+        """Get the player information."""
+        params = {"pid": player_id}
+        response = await self._connection.command(
+            const.COMMAND_GET_PLAYER_INFO, params
+        )
+        return response.payload
+
     async def set_player_state(self, player_id: int, state: str):
         """Set the state of the player."""
         if state not in const.VALID_PLAY_STATES:
